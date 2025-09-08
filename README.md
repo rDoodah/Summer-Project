@@ -10,6 +10,9 @@ A Flask-based booking application designed to manage bookings, user accounts, ti
 ### Admin Features
 - View all learners and their prior bookings.
 - Access detailed reports
+- To login as an admin:
+  - **Username** admin
+  - **Password** admin123
 
 # Technology Stack
 - **Backend** Python, Flask, Flask-SQLAlchemy
@@ -35,3 +38,4 @@ Then navigate to http://localhost:5000 in your browser to access the application
 
 # Option Enhancements
 - Add environment variables for secret keys and database URIs.
+
