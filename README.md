@@ -5,7 +5,18 @@ A Flask-based booking application designed to manage bookings, user accounts, ti
 # Features
 - Timetable & Calendar: View and manage schedules easily.
 - Reviews & Feedback: Learners can leave reviews for sessions.
-- Reports: Generate detailed learner and coach reports
+- Login system: Learner can create profiles.
+
+### Admin Features
+- View all learners and their prior bookings.
+- Access detailed reports
+
+# Technology Stack
+- **Backend** Python, Flask, Flask-SQLAlchemy
+- **Frontend** HTML, Jinja2, Bootstrap 5
+- **Database** SQLite
+- **Authentication** hashed passwords within a Flask session
+- **Deployment** Local server
 
 # Requirements
 
