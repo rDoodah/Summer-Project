@@ -33,9 +33,10 @@ pip install Flask Flask-SQLAlchemy Bcrypt
 ```
 # Running the App
 Start the Flask server by running:
-python main.py
+python main.py.
 Then navigate to http://localhost:5000 in your browser to access the application.
 
 # Option Enhancements
 - Add environment variables for secret keys and database URIs.
+
 
