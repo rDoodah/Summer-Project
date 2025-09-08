@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-3xl text-blue-700 mb-4">Lesson Reviews</h2>
+
+    {% if lessons %}
+        {% for lesson in lessons %}
+            {% if lesson.reviews %}
+            <div class="card mb-4 shadow-sm border-info">
+                <div class="card-header bg-primary text-white">
+                    <h5>{{ lesson.date }} | {{ lesson.time_slot }} | Grade {{ lesson.grade_level }} | Coach: {{ lesson.coach.name }}</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        {% for review in lesson.reviews %}
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <strong>{{ review.learner.name }}</strong>
+                                <span class="badge bg-success">{{ review.rating }}/5</span>
+                            </div>
+                            {% if review.comment %}
+                                <p class="mb-0 mt-1">{{ review.comment }}</p>
+                            {% endif %}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <p class="text-blue-700">No lessons found.</p>
+    {% endif %}
+</div>
+{% endblock %}

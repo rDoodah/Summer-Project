@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="text-center mb-5">
+        <h1 class="display-4 text-blue-700">Welcome to Hatfield Junior Swimming School!</h1>
+        <p class="lead">Manage your swimming lessons, view timetables, book lessons, and submit reviews all in one place.</p>
+        <a href="{{ url_for('signup') }}" class="btn btn-primary btn-lg me-2">Sign Up</a>
+        <a href="{{ url_for('login') }}" class="btn btn-info btn-lg">Login</a>
+    </div>
+
+    <div class="row text-center mb-5">
+        <div class="col-md-4 mb-3">
+            <div class="card h-100 shadow-sm border-info">
+                <div class="card-body">
+                    <i class="bi bi-calendar2-event display-4 text-blue-600"></i>
+                    <h5 class="card-title mt-3">View Timetable</h5>
+                    <p class="card-text">Check lesson schedules by day, grade level, or coach to easily plan your swimming sessions.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card h-100 shadow-sm border-info">
+                <div class="card-body">
+                    <i class="bi bi-journal-check display-4 text-blue-600"></i>
+                    <h5 class="card-title mt-3">Book Lessons</h5>
+                    <p class="card-text">Reserve your spot in the desired lesson and stay on track with your swimming progress.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card h-100 shadow-sm border-info">
+                <div class="card-body">
+                    <i class="bi bi-chat-left-text display-4 text-blue-600"></i>
+                    <h5 class="card-title mt-3">Leave Reviews</h5>
+                    <p class="card-text">Share feedback after attending lessons and help your coaches improve their sessions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-5">
+        <h3 class="text-blue-700 mb-3">Quick Links</h3>
+        <ul class="list-group">
+            <li class="list-group-item"><a href="{{ url_for('signup') }}">Sign up as a new learner</a></li>
+            <li class="list-group-item"><a href="{{ url_for('login') }}">Login to your account</a></li>
+            <li class="list-group-item"><a href="{{ url_for('calendar') }}">View lesson timetable</a></li>
+            <li class="list-group-item"><a href="{{ url_for('learner_report') }}">View Learner Reports</a></li>
+            <li class="list-group-item"><a href="{{ url_for('coach_report') }}">View Coach Reports</a></li>
+        </ul>
+    </div>
+
+
+    <div class="row text-center">
+        <div class="col-md-4 mb-3">
+            <div class="card h-100 shadow-sm border-info">
+                <div class="card-body">
+                    <h3 class="text-blue-600">{{ num_learners }}</h3>
+                    <p>Learners Enrolled</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card h-100 shadow-sm border-info">
+                <div class="card-body">
+                    <h3 class="text-blue-600">{{ num_coaches }}</h3>
+                    <p>Coaches on Staff</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card h-100 shadow-sm border-info">
+                <div class="card-body">
+                    <h3 class="text-blue-600">{{ num_lessons }}</h3>
+                    <p>Lessons Scheduled</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5" style="max-width: 600px;">
+    <div class="card shadow-sm border-info">
+        <div class="card-header bg-primary text-white text-center">
+            <h3>Leave a Review</h3>
+        </div>
+        <div class="card-body">
+            <p><strong>Lesson:</strong> {{ booking.lesson.date }} | {{ booking.lesson.time_slot }} | Grade {{ booking.lesson.grade_level }} | Coach: {{ booking.lesson.coach.name }}</p>
+
+            {% if message %}
+            <div class="alert alert-success" role="alert">
+                {{ message }}
+            </div>
+            {% endif %}
+
+            <form method="POST" action="{{ url_for('submit_review', booking_id=booking.id) }}">
+                <div class="mb-3">
+                    <label for="rating" class="form-label">Rating</label>
+                    <select name="rating" id="rating" class="form-select" required>
+                        <option value="1">1 - Very Dissatisfied</option>
+                        <option value="2">2 - Dissatisfied</option>
+                        <option value="3">3 - Ok</option>
+                        <option value="4">4 - Satisfied</option>
+                        <option value="5">5 - Very Satisfied</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="comment" class="form-label">Comment</label>
+                    <textarea name="comment" id="comment" class="form-control" rows="4" placeholder="Write your review here..."></textarea>
+                </div>
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Submit Review</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
